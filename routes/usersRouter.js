@@ -9,6 +9,9 @@ router.post('/register', userController.postRegister)
 router.get('/login', userController.loginForm)
 router.post('/login', userController.postLogin)
 
+router.get('user/:id')
+// router.get('/user', userController.readAllUser)
+
 
 
 

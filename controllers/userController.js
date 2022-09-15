@@ -3,7 +3,8 @@ const bcrypt = require('bcryptjs')
 
 class userController {
     static registerForm(req, res){
-        res.render('registerForm')
+        const {errors} = req.query
+        res.render('registerForm', {errors})
     }
     static loginForm(req, res){
         const {errors} =req.query
@@ -20,10 +21,12 @@ class userController {
                 let errors = err.errors.map(el => {
                     return el.message
                 })
-                console.log(errors);
-                // res.redirect(`/register?errors=${errors}`)
+                // console.log(errors);
+                res.redirect(`/register?errors=${errors}`)
+            }else {
+                res.send(err)
+
             }
-            res.send(err)
         });
     }
 
@@ -35,7 +38,8 @@ class userController {
                 const isValidPassword = bcrypt.compareSync(password, user.password)
                 // console.log(isValidPassword);
                 if(isValidPassword){
-                    return res.redirect('/')
+                    req.session.userId = user.id
+                    return res.redirect(`/`)
                 } else {
                     const errors = "Invalid username/password"
                     return res.redirect(`/login?errors=${errors}`)
@@ -46,6 +50,7 @@ class userController {
             }
             
         }).catch((err) => {
+            res.send(err)
             
         });
     }
