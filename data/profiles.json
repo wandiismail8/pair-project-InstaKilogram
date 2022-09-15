@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "fullName": "Nabila",
+        "bio": "Happily ever after",
+        "profileImage": "https://images.unsplash.com/photo-1592621385612-4d7129426394?w=152&h=152&fit=crop",
+        "UserId": 1,
+        "birthDate": "1998-03-30T00:00:00.000Z",
+        "gender": "Female"
+        
+    },
+    {
+        "id": 2,
+        "fullName": "Mira",
+        "bio": "Don't give up, it's not the end",
+        "profileImage": "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=152&h=152&fit=crop",
+        "UserId": 2,
+        "birthDate": "1996-06-15T00:00:00.000Z",
+        "gender": "Female"
+
+    },
+    {
+        "id": 3,
+        "fullName": "Budi",
+        "bio": "Just trust yourself",
+        "profileImage": "https://images.unsplash.com/photo-1557862921-37829c790f19?w=152&h=152&fit=crop",
+        "UserId": 3,
+        "birthDate": "1988-01-21T00:00:00.000Z",
+        "gender": "Male"
+
+    },
+    {
+        "id": 4,
+        "fullName": "David",
+        "bio": "Don't blame your condition just take easily",
+        "profileImage": "https://images.unsplash.com/photo-1615109398623-88346a601842?w=152&h=152&fit=crop",
+        "UserId": 4,
+        "birthDate": "1990-08-07T00:00:00.000Z",
+        "gender": "Male"
+
+    },
+    {
+        "id": 5,
+        "fullName": "Purwanto",
+        "bio": "Gamer ganteng idaman",
+        "profileImage": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=152&h=152&fit=crop",
+        "UserId": 5,
+        "birthDate": "2000-09-07T00:00:00.000Z",
+        "gender": "Male"
+
+    }
+
+]
+
+
+

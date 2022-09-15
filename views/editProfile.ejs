@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <form action="/<%= profile.username %>/edit" method="post">
+    FullName <br>
+    <input type="text" name="fullName" value="<%= profile.Profile.fullName %>"> <br>
+    Gender <br>
+    <select name="gender">
+        <% const gender = ["male", "female"] %> 
+        <% for( let i = 0; i < gender.length; i++ ) { %>
+          <option value="<%= gender[i] %>"<%= profile.Profile.gender === gender[i] ? "selected" : "" %>><%= gender[i] %></option>
+        <% } %>
+    </select><br>
+    Birth Date <br>
+    <input type="date" name="birthDate" value="<%=profile.Profile.date()%>"><br>
+    Bio <br>
+    <textarea name="bio" cols="30" rows="20"><%=profile.Profile.bio%></textarea><br>
+    Profile Image <br>
+    <input type="text" name="profileImage" value="<%=profile.Profile.profileImage%>"><br><br>
+
+    <input type="submit" value="Save Profile">
+  </form>
+</body>
+</html>

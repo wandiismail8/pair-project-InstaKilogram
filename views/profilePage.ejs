@@ -1,0 +1,85 @@
+<%- include('partials/header') %>
+    <div class="navigation">
+        <div class="logo">
+          <a class="no-underline" href="/">
+            Instakilogram
+          </a>
+        </div>
+        <div class="navigation-icons">
+          <a href="/<%= user[0].username %>" class="navigation-link">
+            <i class="fa fa-user-circle"></i>
+          </a>
+          <a href="/logout" id="signout" class="navigation-link">
+            <i class="fa fa-sign-out"></i>
+          </a>
+        </div>
+    </div>
+    <div class="container">
+
+		<div class="profile">
+
+			<div class="profile-image">
+
+				<img src="<%= user[0].Profile.profileImage %>" alt="">
+
+			</div>
+
+			<div class="profile-user-settings">
+
+				<h1 class="profile-user-name"><%= user[0].username %></h1>
+
+				<a href="<%= user[0].username %>/edit"><button class="btn profile-edit-btn">Edit Profile</button></a>
+
+				<button class="btn profile-settings-btn" aria-label="profile settings"><i class="fa fa-cog" aria-hidden="true"></i></button>
+
+			</div>
+
+			<div class="profile-stats">
+
+				<ul>
+					<li><span class="profile-stat-count"><%= user[0].Posts.length %></span> posts</li>
+					<li><a href="<%= user[0].username %>/add"><button class="profile-stat-count btn profile-edit-btn">Add Post</button></a></li>
+				</ul>
+
+			</div>
+
+			<div class="profile-bio">
+
+				<p>
+						<span class="profile-real-name"><%= user[0].Profile.fullName %></span><br>
+						<%= user[0].Profile.bio %> 
+				</p>
+
+			</div>
+
+		</div>
+		<!-- End of profile section -->
+
+	</div>
+	<!-- End of container -->
+
+	<div class="container">
+
+		<div class="gallery">
+			<% user[0].Posts.forEach(x => { %>
+			<div class="gallery-item" tabindex="0">
+				
+				<img src="<%= x.postImage %>" class="gallery-image" alt="">
+				<a href="/delete/<%= x.id %>"><button class="fa fa-trash-o"></button></a>
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Caption</span><i class="fa fa-quote-left" aria-hidden="true"></i> <%= x.caption %></li>
+					</ul>
+
+				</div>
+
+			</div>
+			<% }) %>
+		</div>
+    
+		<!-- End of gallery -->
+
+	</div>
+</body>
+</html>

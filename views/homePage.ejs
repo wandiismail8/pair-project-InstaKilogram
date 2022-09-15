@@ -1,0 +1,58 @@
+<%- include('partials/header') %>
+    <div class="navigation">
+        <div class="logo">
+          <a class="no-underline" href="/">
+            Instakilogram
+          </a>
+        </div>
+        <div class="navigation-search-container">
+          <form action="/" method="get">
+              <input class="search-field" type="text" name="search" placeholder="Search">
+              <a href="" ><button class="fa fa-search"></button></a>
+          </form>
+          <div class="search-container">
+            <div class="search-container-box">
+              <div class="search-results">
+      
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navigation-icons">
+          <a href="/<%= profile.username %>" class="navigation-link">
+            <i class="fa fa-user-circle"></i>
+          </a>
+          <a href="/logout" id="signout" class="navigation-link">
+            <i class="fa fa-sign-out"></i>
+          </a>
+        </div>
+    </div>
+    <div class="container">
+
+		<div class="gallery">
+            <% user.forEach(x => { %>
+			<div class="gallery-item" tabindex="0">
+
+        <img src="<%= x.postImage %>" class="gallery-image" alt="">
+        <% if (profile.role === "Admin") { %>
+          <a href="/delete/<%= x.id %>"><button class="fa fa-trash-o"></button></a>
+        <% } %>
+        <p><%= x.User.username %></p>
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Caption:</span><i class="fa fa-quote-left" aria-hidden="true"></i> <%= x.caption %></li>
+					</ul>
+
+				</div>
+
+			</div>
+            <% }) %>
+		</div>
+    
+		<!-- End of gallery -->
+
+	</div>
+</body>
+</html>
