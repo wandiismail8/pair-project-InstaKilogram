@@ -16,6 +16,13 @@ class userController {
         .then(() => {
             res.redirect('/login')
         }).catch((err) => {
+            if(err.name === "SequelizeValidationError"){
+                let errors = err.errors.map(el => {
+                    return el.message
+                })
+                console.log(errors);
+                // res.redirect(`/register?errors=${errors}`)
+            }
             res.send(err)
         });
     }
