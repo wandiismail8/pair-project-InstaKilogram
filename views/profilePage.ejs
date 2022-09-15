@@ -403,9 +403,9 @@
 
 				<h1 class="profile-user-name"><%= user[0].username %></h1>
 
-				<button class="btn profile-edit-btn">Edit Profile</button>
+				<a href=""><button class="btn profile-edit-btn">Edit Profile</button></a>
 
-				<button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+				<button class="btn profile-settings-btn" aria-label="profile settings"><i class="fa fa-cog" aria-hidden="true"></i></button>
 
 			</div>
 
@@ -413,15 +413,16 @@
 
 				<ul>
 					<li><span class="profile-stat-count">164</span> posts</li>
-					<li><span class="profile-stat-count">188</span> followers</li>
-					<li><span class="profile-stat-count">206</span> following</li>
 				</ul>
 
 			</div>
 
 			<div class="profile-bio">
 
-				<p><span class="profile-real-name">Jane Doe</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit 📷✈️🏕️</p>
+				<p>
+                    <span class="profile-real-name"><%= user[0].Profile.fullName %></span><br>
+                    <%= user[0].Profile.bio %> 
+                </p>
 
 			</div>
 
@@ -446,7 +447,7 @@
 				<div class="gallery-item-info">
 
 					<ul>
-						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i><%= x.like %></li>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fa fa-heart" aria-hidden="true"></i> <%= x.like %></li>
 					</ul>
 
 				</div>
