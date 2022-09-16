@@ -22,7 +22,6 @@ class userController {
         let user 
         Post.findAll(option)
         .then(users => {
-            // console.log(users);
             user = users
             return User.findOne({
                 where: {id: req.session.user.id}
@@ -57,7 +56,6 @@ class userController {
                 let errors = err.errors.map(el => {
                     return el.message 
                 })
-                // console.log(errors);
                 res.redirect(`/register?errors=${errors}`)
             }else {
                 res.send(err)

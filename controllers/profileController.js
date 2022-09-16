@@ -3,7 +3,6 @@ const { User, Profile, Post} = require('../models')
 class Controllers {
   static profile(req, res){
     let {username} = req.params
-    console.log(req.params);
     User.findAll({ where: {username},
       include: [Profile, {
         model: Post,
