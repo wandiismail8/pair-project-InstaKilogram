@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "username": "nabila123",
+    "email": "nabila@yahoo.com",
+     "password": "test123",
+     "role": "User"
+
+  },
+  {
+      "id": 2,
+      "username": "mirachan",
+      "email": "mirales@gmail.com",
+       "password": "test456",
+       "role": "User"
+
+  },
+  {
+      "id": 3,
+      "username": "budionly",
+      "email": "budi@company,com",
+       "password": "budisaja",
+       "role": "Admin"
+
+  }, {
+      "id": 4,
+      "username": "davidlali6",
+      "email": "davidlali@gmail.com",
+       "password": "davidnihboss3",
+       "role": "Admin"
+
+  }, {
+      "id": 5,
+      "username": "purwanto33",
+      "email": "purwanto33@gmail.com",
+       "password": "purwanto65",
+       "role": "User"
+
+  }
+]
